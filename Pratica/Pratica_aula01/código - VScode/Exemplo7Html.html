@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 7 HTML</title>
+</head>
+
+<body>
+    <h1>Exemplo 7 - HTML - Listas</h1>
+    <p>Em documentos html podemos usar 3 listas distintas, são elas: lista ordenada, lista não ordenada e lista
+        descritiva. Essas listas são representadas pelas tags: &lt;ol&gt;, &lt;ul&gt; e dt/d1/dd. Para todas as listas,
+        utilizamos a tag &lt;li&gt;, que representa um item e só pode ser utilizada dentro das listas ordenadas ou não
+        ordenadas</p>
+    <h2>Lista ordenada - &lt;ol&gt;</h2>
+    <p>Neste tipo de lista os elementos são distribuídos em ordem, ou seja, a ordem importa. Por exemplo: </p>
+    <ol>
+        <li>Planejamento</li>
+        <li>Design</li>
+        <li>Desenvolvimento</li>
+        <li>Testes</li>
+        <li>Publicação</li>
+    </ol>
+    <h2>Lista não ordenada - &lt;ul&gt;</h2>
+    <p>Esse tipo de lista não possui uma ordem específica e seus elementos são representados por bullets. Essa lista é
+        muito utilizada para a construção de menus. Por exemplo: </p>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScripts</li>
+        <li>Outras tecnologias</li>
+    </ul>
+    <h2>Listas aninhadas</h2>
+    <p>Nesse tipo de lista possuímos sublistas, conforme exemplificamos abaixo: </p>
+    <ol>
+        <li>Planejamento
+            <ol type="a">
+                <li>Definir o objetivo do site</li>
+                <li>Identificar o público-alvo</li>
+                <li>Criar o mapa do site</li>
+            </ol>
+        </li>
+        <li>Design</li>
+        <ol type="I">
+            <li>Criar protótipos</li>
+            <li>Definir a tipográfia</li>
+        </ol>
+        <li>Desenvolvimento</li>
+        <ol type="A">
+            <li>Codificar o front-end</li>
+            <li>Implementar o back-end</li>
+        </ol>
+        <li>Testes</li>
+        <ul>
+            <li>Aqui mudamos de lista, estamos usando a lista não ordenada.</li>
+            <li>Subitem-2</li>
+            <ul>
+                <li>
+                <li>Subitem 2.1</li>
+                <li>Subitem 2.2</li>
+                <li>Subitem 2.3</li>
+                </li>
+            </ul>
+            <li>Subitem-3</li>
+            <li>Subitem-4</li>
+            <li>Subitem-5</li>
+        </ul>
+        <li>Publicação</li>
+    </ol>
+    <h2>Listas de descrição</h2>
+    <p>As listas de descrição são muitos utilizadas quando precisamos criar glossários, fichas técnicas e perguntas frequentes. Abaixo exemplificamos o seu uso.</p>
+    <dl>
+        <dt>WireFrame</dt>
+        <dd>Esboço que define a disposição dos elementos, sem cores nem tipografia.</dd>
+        <dt>Responsividade</dt>
+        <dd>Capacidade da interface se adaptar a diferentes larguras de tela</dd>
+    </dl>
+
+</body>
+
+</html>
