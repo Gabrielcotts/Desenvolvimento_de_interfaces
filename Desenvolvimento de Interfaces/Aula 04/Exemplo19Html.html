@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 19 - HTML</title>
+</head>
+
+<body>
+    <h1>Cadastro para o Evento</h1>
+
+    <form action="cadastro.psx" method="post">
+        <fieldset>
+            <legend>Informações da Inscrição</legend>
+
+            <div>
+                <label for="nomeTxt">Nome completo:</label><br>
+                <input type="text" name="nomeTxt" id="nomeTxt" required placeholder="Digite seu nome completo">
+            </div>
+            <br>
+
+            <div>
+                <label for="emailCadastrado">E-mail:</label><br>
+                <input type="email" name="emailCadastrado" id="emailCadastrado" placeholder="exemplo@email.com" required>
+            </div>
+            <br>
+
+            <div>
+                <label for="idadeAtual">Idade:</label><br>
+                <input type="number" name="idadeAtual" id="idadeAtual" min="14" max="100" required>
+            </div>
+            <br>
+
+            <div>
+                <label for="dataEvento">Data do evento:</label><br>
+                <input type="date" name="dataEvento" id="dataEvento" min="2026-10-05" required>
+            </div>
+            <br>
+
+            <div>
+                <label for="horaPreferida">Horário Preferido:</label><br>
+                <input type="time" name="horaPreferida" id="horaPreferida">
+            </div>
+            <br>
+
+            <div>
+                <label>Modalidade do Evento:</label><br>
+                <input type="radio" name="modalidadeEvento" id="modPresencial" value="1">
+                <label for="modPresencial">Presencial</label><br>
+
+                <input type="radio" name="modalidadeEvento" id="modOnline" value="2">
+                <label for="modOnline">Online</label><br>
+
+                <input type="radio" name="modalidadeEvento" id="modHibrido" value="3">
+                <label for="modHibrido">Híbrido</label><br>
+            </div>
+            <br>
+
+            <div>
+                <label>Áreas de interesse:</label><br>
+                <input type="checkbox" name="chkAreaInteresse" id="areaTech" value="1">
+                <label for="areaTech">Tecnologia e Inovação</label><br>
+
+                <input type="checkbox" name="chkAreaInteresse" id="areaSaude" value="2">
+                <label for="areaSaude">Inovação e criatividade</label><br>
+
+                <input type="checkbox" name="chkAreaInteresse" id="areaEduca" value="3">
+                <label for="areaEduca">Engenharias</label><br>
+
+                <input type="checkbox" name="chkAreaInteresse" id="areaNegocios" value="4">
+                <label for="areaNegocios">Saúde e Bem-Estar</label><br>
+
+                <input type="checkbox" name="chkAreaInteresse" id="areaCultura" value="5">
+                <label for="areaCultura">Entreterimento e Diversidades culturais</label><br>
+            </div>
+            <br>
+
+            <div>
+                <label for="regiaoBrasil">Região:</label><br>
+                <select name="regiaoBrasil" id="regiaoBrasil">
+                    <option value="1">Norte</option>
+                    <option value="2">Nordeste</option>
+                    <option value="3">Centro-Oeste</option>
+                    <option value="4">Sudeste</option>
+                    <option value="5">Sul</option>
+                </select>
+            </div>
+            <br>
+
+            <div>
+                <label for="corCracha">Cor do Crachá:</label><br>
+                <input type="color" name="corCracha" id="corCracha">
+            </div>
+            <br>
+
+            <div>
+                <label for="nivelExpectativa">Nível de Expectativa:</label><br>
+                <input type="range" name="nivelExpectativa" id="nivelExpectativa" min="0" max="100" step="1" value="50">
+            </div>
+            <br>
+
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpar</button>
+        </fieldset>
+    </form>
+</body>
+
+</html>

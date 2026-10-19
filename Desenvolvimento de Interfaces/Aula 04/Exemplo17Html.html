@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 17 - HMTL</title>
+</head>
+<body>
+    <h1>Cadastro Pessoal</h1>
+
+     <form action="paginaCadastro.jsp" method="post">
+        <fieldset>
+            <legend>Informações Pessoais</legend>
+
+            <div>
+                <label for="txtNome">Nome Completo:</label><br>
+                <input type="text" name="txtNome" id="txtNome" placeholder="Digite seu nome completo" required>
+            </div>
+            <br>
+
+            <div>
+                <label for="txtEmail">Email:</label><br>
+                <input type="email" name="txtEmail" id="txtEmail" placeholder="exemplo@email.com" required>
+            </div>
+            <br>
+
+            <div>
+                <label for="numAnoNascimento">Ano de nascimento:</label><br>
+                <input type="number" name="numAnoNascimento" id="numAnoNascimento" min="1909" max="2026">
+            </div>
+            <br>
+
+            <div>
+                <label for="txtDataNascimento">Data de nascimento:</label><br>
+                <input type="date" name="txtDataNascimento" id="txtDataNascimento">
+            </div>
+            <br>
+
+            <div>
+                <label for="horaPreferencia">Horário preferido de estudo:</label><br>
+                <input type="time" name="horaPreferencia" id="horaPreferencia">
+            </div>
+            <br>
+
+            <button type="submit">Enviar</button>
+        </fieldset>
+    </form>
+</body>
+</html>

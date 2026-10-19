@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 39 - HTML CSS</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .navigation{
+            display:flex;
+            flex-flow:row wrap;
+            justify-content: flex-end;
+            list-style: none;
+            margin: 0;
+            background-color: black;
+            font-size: 1.3rem;
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+        }
+        .navigation a{
+            text-decoration: none;
+            display: block;
+            padding: 1rem;
+            color: gold;
+        }
+        .navigation a:hover{
+            background-color: gold;
+            color:black;
+            font-weight: bold;
+        }
+        @media all and (max-width:800px){
+            .navigation{
+                justify-content: space-around;
+            }
+        }
+        @media all and (max-width:600px){
+            .navigation{
+               flex-flow: column-reverse;
+               padding: 0;
+            }
+            .navigation a{
+                text-align: center;
+                padding: 10px;
+                border-top: solid gold 1px;
+                border-bottom: solid rgba(224,192,10,0.2) 1px;
+            }
+            .navigation li:last-of-type a{
+                border-bottom: none;
+            }
+
+        }
+
+
+    </style>
+</head>
+<body>
+    
+ <ul class="navigation">
+    <li><a href="">Início</a></li>
+    <li><a href="">Sobre</a></li>
+    <li><a href="">Produto</a></li>
+    <li><a href="">Contato</a></li>
+</ul>
+<div>
+    <h1>Exemplo 39 HTML CSS - Flexbox Responsivo</h1>
+    <h2>Exemplo de criação de um menu responsivo</h2>
+</div>
+</body>
+</html>

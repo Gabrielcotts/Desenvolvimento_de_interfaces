@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 30 HTML - CSS</title>
+</head>
+<style>
+    body{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        margin: 50px;
+        background-color: #f4f4f4;
+    }
+    .div1{
+        border-left: solid rgb(155, 25, 36) 8px;
+        background-color: rgba(155, 24, 36, 0,08);
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        margin: 25px;
+        padding: 20px;
+    }
+    #paragrafo1{
+        color: darkblue;
+        font-weight: 800;
+        text-align: justify;
+    }
+    .div2{
+        border-left: solid darkorange 8px;
+        background-color: rgba(238, 134, 6, 0.08);
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        margin: 25px;
+        padding: 20px;
+    }
+    #paragrafo2{
+        color: blue;
+    }
+    .div3{
+        border-left: solid #993503 8px;
+        background-color: rgba(238, 134, 6, 0.08);
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        margin: 25px;
+        padding: 20px;
+    }
+    .cor-hexadecimal{
+        color: #b303c6;
+    }
+    .div4{
+        border-left: solid rgb(255, 0, 149) 8px;
+        background-color: rgba(238, 134, 6, 0.08);
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        margin: 25px;
+        padding: 20px;
+        text-align: justify;
+        font-size: 2em;
+        font-weight: bold;
+        line-height: 2.5;
+    }
+    .div5{
+        border-left: solid hsl(147, 82%, 43%) 8px;
+        background-color: hsla(147, 82%, 43%, 0.3);
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        margin: 25px;
+        padding: 20px;
+        text-align: justify;
+        font-size: 2em;
+        font-weight: bold;
+        line-height: 2.5;
+    }
+</style>
+
+<body>
+    <div class="div1">
+        <h1>Exemplo 30 HTML - CSS (Cores em CSS)</h1>
+        <p id="paragrafo1">
+            O CSS permite representar cores de diferentes formas. Podemos utilizar o nome da cor, valores hexadecimais, RGB, RGBA, HSL, HSLA, dentre outros.
+        </p>
+    </div>
+    <div class="div2">
+        <h2>1. Cores pelo nome</h2>
+        <p id="paragrafo2">Uma das formas mais simples de utilizar cores no CSS é informando diretamente na propriedade referente a cor o nome da cor.</p>
+        <p>
+            Este texte utiliza a cor <strong>blue</strong>.
+        </p>
+    </div>
+    <div class="div3">
+        <h2>2. Cores no padrão hexadecimal</h2>
+        <p>O padrão de cores hexadecimal é aquele que usa o símbolo <strong>#</strong> seguido normalmente de seis caracteres do sistema hexadecimal que vai do 0 ao 9 e da letra A à F.</p>
+        <p>
+            Os dois primeiros representam o vermelho,
+            os dois seguintes representam o verde
+            e os dois últimos representam o azul.
+        </p>
+
+        <p class="cor-hexadecimal">
+            Este texto utiliza a cor hexadecimal #8B0000.
+        </p>
+
+        <p>
+            Exemplo:
+            <code>color: #8B0000;</code>
+        </p>
+    </div>
+    <div class="div4">
+        <h2>3. Padrão de cores RGB </h2>
+        <p>O sistema de cores RGB é aquele baseado nas cores Vermelho(R), Verde(G), Azul(B). Cada uma dessas três cores recebe um valor de 0 a 255, onde o 0 é a aunsência de cor e o 255 todas as cores</p>
+        <p>Além disso podemos também utilizar um canal de transparência chamado Alfa, ficando o sistema descrito como RGBA, o alfa(A) pode variar entre 0 e 1, onde quanto mais próximo do 0 maior será a transparência e mais próximo do 1 menos transparente será</p>
+    </div>
+    <div class="div5">
+        <h2>4. Padrão de cores HSL</h2>
+        <p>O padrão HSL significa HUE, Saturation e Lightness, ou seja, matiz saturação e luminosidade. A matiz representa a posição da cor no círculo cromático e normalmente varia de 0 a 360º. Já a saturação determina a intensidade da cor e é representada por valrores percentuais. Por fim, temos a luminosidade que determina o quanto a cor será clara ou escura e também pe definida por valores perecentuais.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 18 - HTML</title>
+</head>
+<body>
+    <h1>Preferências do Aluno</h1>
+
+    <form action="cadastro.jsp" method="post">
+        <fieldset>
+            <legend>Cadastro de Preferências</legend>
+
+            <div>
+                <label for="nomeTxt">Nome completo:</label><br>
+                <input type="text" name="nomeTxt" id="nomeTxt" required placeholder="Digite seu nome completo">
+            </div> 
+            <br>
+
+            <div>
+                <label for="corFav">Cor favorita:</label><br>
+                <input type="color" name="corFav" id="corFav">
+            </div>
+            <br>
+
+            <div>
+                <label>Disciplinas de interesse:</label><br>
+                <input type="checkbox" name="chkDisciplinaInteresse" id="disc1" value="1">
+                <label for="disc1">Matemática</label><br>
+
+                <input type="checkbox" name="chkDisciplinaInteresse" id="disc2" value="2">
+                <label for="disc2">Português</label><br>
+
+                <input type="checkbox" name="chkDisciplinaInteresse" id="disc3" value="3">
+                <label for="disc3">Geografia</label><br>
+
+                <input type="checkbox" name="chkDisciplinaInteresse" id="disc4" value="4">
+                <label for="disc4">História</label><br>
+
+                <input type="checkbox" name="chkDisciplinaInteresse" id="disc5" value="5">
+                <label for="disc5">Educação Física</label><br>
+            </div> 
+            <br>
+
+            <div>
+                <label>Turno Preferido:</label><br>
+                <input type="radio" name="rdTurnoFav" id="turnoMat" value="1">
+                <label for="turnoMat">Matutino</label><br>
+
+                <input type="radio" name="rdTurnoFav" id="turnoVesp" value="2">
+                <label for="turnoVesp">Vespertino</label><br>
+
+                <input type="radio" name="rdTurnoFav" id="turnoNot" value="3">
+                <label for="turnoNot">Noturno</label><br>
+            </div> 
+            <br>
+
+            <div>
+                <label for="cursoFavorito">Curso Favorito:</label><br>
+                <select name="cursoFavorito" id="cursoFavorito">
+                    <option value="1">Análise e Desenvolvimento de Sistemas</option>
+                    <option value="2">Ciências da Computação</option>
+                    <option value="3">Engenharia de Software</option>
+                    <option value="4">Licenciatura em Computação</option>
+                </select>
+            </div>
+            <br>
+
+            <div>
+                <label for="nivelInteresse">Nível de Interesse em HTML:</label><br>
+                <input type="range" name="nivelInteresse" id="nivelInteresse" min="0" max="10" step="1" value="5">
+            </div>
+            <br>
+
+            <button type="submit">Enviar</button>
+        </fieldset>
+    </form>
+</body>
+</html>
