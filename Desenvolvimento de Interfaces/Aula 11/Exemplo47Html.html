@@ -1,0 +1,82 @@
+!!
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Exemplo 47 - Bootstrap</title>
+    <style>
+        .painel {
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+            font-weight: bold;
+            margin: 50px;
+            padding: 15px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-sm">
+        <h1>Exemplo 47 - Bootstrap Grid</h1>
+        <div class="painel">
+            <h3>Cadastro de Livros</h3>
+            <div class="form-group">
+                <label for="">Título do Livro</label>
+                <input type="text" name="" id="" class="form-control">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="">ISBN</label>
+                        <input type="text" name="" id="" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">Ano de Publicação</label>
+                        <input type="date" name="" id="" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label for="">Categoria</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Selecione uma categoria</option>
+                            <option value="1">Romance</option>
+                            <option value="2">Ficção</option>
+                            <option value="3">Ação</option>
+                            <option value="4">Aventura</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label for="">Situação</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Selecione uma situação</option>
+                            <option value="1">Disponível</option>
+                            <option value="2">Indisponível</option>
+                            <option value="3">Emprestado</option>
+                            <option value="4">Danificado</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="row mt-4">
+                    <div class="col-12 d-flex justify-content-end gap-2">
+                        <button type="button" class="btn btn-primary">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Salvar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

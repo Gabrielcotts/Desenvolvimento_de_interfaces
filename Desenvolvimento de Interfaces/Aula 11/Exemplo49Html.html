@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Exemplo 49 - Bootstrap</title>
+
+    <style>
+
+        .painel {
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+
+        label {
+            margin: 8px 0;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="container-sm">
+        <div class="card mt-4 painel">
+
+            <div class="card-header bg-primary text-white">
+                Cadastro de Pessoa
+            </div>
+
+            <div class="card-body">
+                <div>
+                    <label for="">Nome</label>
+                    <input type="text" name="" id="" class=form-control>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label for="">Nome da mãe</label>
+                        <input type="text" name="" id="" class=form-control>
+                    </div>
+                    <div class="col-6">
+                        <label for="">Nome do pai</label>
+                        <input type="text" name="" id="" class=form-control>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <label for="">Identidade</label>
+                        <input type="text" name="" id="" class="form-control">
+                    </div>
+                    <div class="col-4">
+                        <label for="">CNH</label>
+                        <input type="text" name="" id="" class="form-control">
+                    </div>
+                    <div class="col-4">
+                        <label for="">CPF</label>
+                        <input type="text" name="" id="" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label for="">E-mail</label>
+                        <input type="text" name="" id="" class="form-control">
+                    </div>
+                    <div class="col-3">
+                        <label for="">Telefone Fixo</label>
+                        <input type="text" name="" id="" class="form-control">
+                    </div>
+                    <div class="col-3">
+                        <label for="">Celular</label>
+                        <input type="text" name="" id="" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <label for="">Cidade</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Selecione um cidade</option>
+                            <option value="1">Asa Sul</option>
+                            <option value="2">Asa Norte</option>
+                            <option value="3">Guará</option>
+                            <option value="4">Noroeste</option>
+                            <option value="5">Planaltina</option>
+                        </select>
+                    </div>
+                    <div class="col-3">
+                        <label for="">Bairro</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Selecione um Bairro</option>
+                            <option value="1">Qnl 01</option>
+                            <option value="2">SQSW 05</option>
+                            <option value="3">SQN 303</option>
+                        </select>
+                    </div>
+                    <div class="col-2">
+                        <label for="">UF</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Selecione uma UF</option>
+                            <option value="1">DF</option>
+                            <option value="2">SP</option>
+                            <option value="3">MG</option>
+                            <option value="3">PE</option>
+                            <option value="3">RJ</option>
+                        </select>
+                    </div>
+                    <div class="col-3">
+                        <label for="">CEP</label>
+                        <input type="text" name="" id="" class="form-control">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-footer">
+                <div class="row mt-4">
+                    <div class="col-12 d-flex justify-content-end gap-2">
+                        <button type="button" class="btn btn-outline-primary">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Salvar </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
