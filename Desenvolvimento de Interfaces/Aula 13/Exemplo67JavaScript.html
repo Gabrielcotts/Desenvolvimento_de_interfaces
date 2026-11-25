@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exemplo 67 - Método Reduce</title>
+    <!-- Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <!-- Font Awesome 5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-header {
+            border-top-left-radius: 12px !important;
+            border-top-right-radius: 12px !important;
+        }
+
+        .table th {
+            background-color: #f8f9fa;
+        }
+
+        .badge-color {
+            font-size: 0.85rem;
+            text-transform: capitalize;
+        }
+
+        .total-highlight {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #198754;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-5">
+        <!-- Cabeçalho -->
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white py-3">
+                <h2 class="h4 mb-0"><i class="fas fa-layer-group me-2"></i>Exemplo 67 - Métodos Map & Reduce
+                </h2>
+            </div>
+            <div class="card-body">
+                <p class="card-text text-muted">
+                    Demonstração prática da manipulação de vetores de objetos utilizando os métodos
+                    <code>Array.map()</code> para transformações e <code>Array.reduce()</code> para cálculo
+                    de totais acumulados.
+                </p>
+
+                <h5 class="mt-4 mb-3 text-secondary"><i class="fas fa-boxes me-2"></i>Vetor Original de
+                    Produtos:</h5>
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>#</th>
+                                <th>Produto</th>
+                                <th>Cor</th>
+                                <th>Preço Original</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaOriginal">
+                            <!-- Preenchido via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Botões de Ação -->
+                <div class="row g-3 mt-2">
+                    <div class="col-md-6">
+                        <button type="button" id="cmdResultado" class="btn btn-outline-primary w-100 py-2"
+                            onclick="aplicarDesconto()">
+                            <i class="fas fa-percentage me-2"></i>1. Aplicar Desconto de 10% (Map)
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" id="cmdResultado2" class="btn btn-primary w-100 py-2"
+                            onclick="verificarDescontoTotal()">
+                            <i class="fas fa-calculator me-2"></i>2. Calcular Total do Desconto (Reduce)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção de Resultados -->
+        <div class="row g-4">
+            <!-- Tabela com Desconto -->
+            <div class="col-lg-8">
+                <div class="card h-100">
+                    <div class="card-header bg-info text-white py-2">
+                        <h5 class="h6 mb-0"><i class="fas fa-tags me-2"></i>Resultado com Desconto (10%)
+                        </h5>
+                    </div>
+                    <div class="card-body" id="containerResultadoComDesconto">
+                        <p class="text-muted fst-italic mb-0">Clique em "Aplicar Desconto" para
+                            visualizar a lista com preços atualizados.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card com Total do Desconto -->
+            <div class="col-lg-4">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-white py-2">
+                        <h5 class="h6 mb-0"><i class="fas fa-receipt me-2"></i>Valor Total do
+                            Desconto</h5>
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center text-center p-4">
+                        <div id="containerTotalDesconto">
+                            <i class="fas fa-coins fa-3x text-success mb-3"></i>
+                            <p class="text-muted mb-2">Clique no botão para somar o desconto de
+                                todos os produtos com <code>reduce</code>.</p>
+                            <span class="total-highlight" id="resultadoValorTotalDesconto">R$
+                                0,00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Declaração correta do array constante de produtos
+        const produtos = [
+            { nome: "Camiseta", preco: 120, cor: "verde" },
+            { nome: "Calça", preco: 200, cor: "amarelo" },
+            { nome: "Sapato", preco: 350, cor: "verde" },
+            { nome: "Sapato", preco: 150, cor: "branco" },
+            { nome: "Sapato", preco: 250, cor: "Preto" },
+            { nome: "Sapato", preco: 100, cor: "Azul" },
+            { nome: "Bermuda", preco: 60, cor: "verde" },
+            { nome: "Chinelo", preco: 60, cor: "verde" }
+        ];
+
+        // Formatador para Real (R$)
+        const formatarMoeda = (valor) => {
+            return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        };
+
+        // Renderiza a tabela inicial de produtos
+        function renderizarTabelaOriginal() {
+            const tbody = document.getElementById("tabelaOriginal");
+            tbody.innerHTML = produtos.map((produto, index) => `
+                <tr>
+                    <td>${index + 1}</td>
+                    <td><strong>${produto.nome}</strong></td>
+                    <td><span class="badge bg-secondary badge-color">${produto.cor}</span></td>
+                    <td>${formatarMoeda(produto.preco)}</td>
+                </tr>
+            `).join('');
+        }
+
+        // Executado ao clicar no primeiro botão
+        function aplicarDesconto() {
+            const produtosComDesconto = produtos.map((produto) => {
+                const desconto = produto.preco * 0.10;
+                const precoFinal = produto.preco - desconto;
+                return {
+                    nome: produto.nome,
+                    cor: produto.cor,
+                    precoOriginal: produto.preco,
+                    desconto: desconto,
+                    precoFinal: precoFinal
+                };
+            });
+
+            const container = document.getElementById("containerResultadoComDesconto");
+            container.innerHTML = `
+                <div class="table-responsive">
+                    <table class="table table-sm table-striped align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Preço Original</th>
+                                <th>Desconto (10%)</th>
+                                <th>Preço Final</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${produtosComDesconto.map(p => `
+                                <tr>
+                                    <td>${p.nome} <span class="badge bg-light text-dark border">${p.cor}</span></td>
+                                    <td class="text-muted text-decoration-line-through">${formatarMoeda(p.precoOriginal)}</td>
+                                    <td class="text-danger fw-bold">- ${formatarMoeda(p.desconto)}</td>
+                                    <td class="text-success fw-bold">${formatarMoeda(p.precoFinal)}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        }
+
+        // Executado ao clicar no segundo botão
+        // Nome corrigido: verificarDescontoTotal (compatível com onclick="verificarDescontoTotal()")
+        function verificarDescontoTotal() {
+            // Utilização correta do método reduce para somar 10% de desconto de cada produto
+            const valorTotalDesconto = produtos.reduce((acumulador, itemAtual) => {
+                const descontoItem = itemAtual.preco * 0.10;
+                return acumulador + descontoItem;
+            }, 0);
+
+            // Atualiza o elemento de resultado correspondente
+            const resultadoTotal = document.getElementById("resultadoValorTotalDesconto");
+            resultadoTotal.textContent = formatarMoeda(valorTotalDesconto);
+
+            // Se a tabela com desconto ainda não estiver aberta, aplica-a também para conveniência visual
+            const container = document.getElementById("containerResultadoComDesconto");
+            if (container.querySelector("table") === null) {
+                aplicarDesconto();
+            }
+        }
+
+        // Inicializa a tabela ao carregar a página
+        window.addEventListener("DOMContentLoaded", renderizarTabelaOriginal);
+    </script>
+</body>
+
+</html>

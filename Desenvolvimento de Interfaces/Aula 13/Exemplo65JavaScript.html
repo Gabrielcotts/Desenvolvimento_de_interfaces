@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Exemplo 65 - JavaScript</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Exemplo 65 - JavaScript - DOM</h1>
+        <p>Este é um parágrafo</p>
+        <p>Este é um novo parágrafo</p>
+        <p>Este é o último parágrafo</p>
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="button">Novo Parágrafo</button>
+        </div>
+    </div>
+
+    <script>
+        const container = document.querySelector(".container");
+        const button = document.querySelector("button");
+        button.addEventListener("click", function () {
+            const p = document.createElement("p");
+            p.textContent = "Novo parágrafo criado a partir do clique do botão!";
+            container.appendChild(p)
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
