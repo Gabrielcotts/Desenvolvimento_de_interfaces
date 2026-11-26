@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 58 - Produto List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body class="bg-light p-4">
+    <div class="container bg-white p-4 rounded shadow-sm">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+                <h2>Produtos</h2>
+                <p class="text-muted mb-0">Catálogo de produtos com relacionamento de Categoria e Fornecedor.</p>
+            </div>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#produtoDialog">
+                <i class="bi bi-plus-lg"></i> Novo Produto
+            </button>
+        </div>
+
+        <div class="row g-3 mb-4">
+            <div class="col-md-5">
+                <input type="text" class="form-control" placeholder="Buscar por Nome ou Código de Barras...">
+            </div>
+            <div class="col-md-4">
+                <select class="form-select">
+                    <option selected>Categoria: Todas</option>
+                    <option value="1">Periféricos</option>
+                    <option value="2">Monitores</option>
+                </select>
+            </div>
+            <div class="col-md-3 text-md-end d-flex align-items-center justify-content-md-end">
+                <span class="text-muted">3 registro(s)</span>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-striped align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>PRODUTO / CÓD. BARRAS</th>
+                        <th>CATEGORIA</th>
+                        <th>FORNECEDOR</th>
+                        <th class="text-end">PREÇO UNIT.</th>
+                        <th>CADASTRO</th>
+                        <th>ATIVO</th>
+                        <th>AÇÕES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#1</td>
+                        <td>Teclado Mecânico RGB<br><small class="text-muted">EAN: 7898541200112</small></td>
+                        <td>Periféricos</td>
+                        <td>TechBrasil Distribuidora</td>
+                        <td class="text-end">R$ 349,90</td>
+                        <td>10/11/2026 09:30</td>
+                        <td><span class="badge bg-success">Ativo</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                                data-bs-target="#produtoDialog"><i class="bi bi-pencil"></i></button>
+                            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#3</td>
+                        <td>Cabo HDMI 2.1 Ultra<br><small class="text-muted">Sem código de barras</small></td>
+                        <td>Cabos e Adaptadores</td>
+                        <td>TechBrasil Distribuidora</td>
+                        <td class="text-end">R$ 59,90</td>
+                        <td>22/11/2026 13:47</td>
+                        <td><span class="badge bg-success">Ativo</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                                data-bs-target="#produtoDialog"><i class="bi bi-pencil"></i></button>
+                            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

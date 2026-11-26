@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 56 - Fornecedor List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body class="bg-light p-4">
+    <div class="container bg-white p-4 rounded shadow-sm">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+                <h2>Fornecedores</h2>
+                <p class="text-muted mb-0">Cadastro de empresas fornecedoras vinculadas ao produtos.</p>
+            </div>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fornecedorDialog">
+                <i class="bi bi-plus-lg"></i> Novo Fornecedor
+            </button>
+        </div>
+
+        <div class="row g-3 mb-4">
+            <div class="col-md-5">
+                <input type="text" class="form-control" placeholder="Buscar por Razão Social ou CNPJ...">
+            </div>
+            <div class="col-md-4">
+                <select class="form-select">
+                    <option selected>Status: Todos</option>
+                    <option value="1">Ativo</option>
+                    <option value="2">Inativo</option>
+                </select>
+            </div>
+            <div class="col-md-3 text-md-end d-flex align-items-center justify-content-md-end">
+                <span class="text-muted">3 registro(s)</span>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-striped align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>RAZÃO SOCIAL</th>
+                        <th>CNPJ</th>
+                        <th>E-MAIL</th>
+                        <th>TELEFONE</th>
+                        <th>ATIVO</th>
+                        <th>AÇÕES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#1</td>
+                        <td>TechBrasil Distribuidora Ltda</td>
+                        <td>11.111.111/0001-11</td>
+                        <td>vendas@techbrasil.com.br</td>
+                        <td>(61) 9999-9999</td>
+                        <td><span class="badge bg-success">Ativo</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                                data-bs-target="#fornecedorDialog"><i class="bi bi-pencil"></i></button>
+                            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#3</td>
+                        <td>ConectaCabos Importação</td>
+                        <td>55.555.555/0001-55</td>
+                        <td class="text-muted">Não informado</td>
+                        <td>(21) 8888-8888</td>
+                        <td><span class="badge bg-secondary">Inativo</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                                data-bs-target="#fornecedorDialog"><i class="bi bi-pencil"></i></button>
+                            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

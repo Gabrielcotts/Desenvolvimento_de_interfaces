@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 60 - Estoque List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body class="bg-light p-4">
+    <div class="container bg-white p-4 rounded shadow-sm mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+                <h2>Controle de Estoque</h2>
+                <p class="text-muted mb-0">Posição atual de estoque e histórico de movimentações.</p>
+            </div>
+            <div>
+                <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#movimentacaoDialog">
+                    <i class="bi bi-arrow-left-right"></i> Nova Movimentação
+                </button>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#estoqueDialog">
+                    <i class="bi bi-gear"></i> Configurar Estoque
+                </button>
+            </div>
+        </div>
+
+        <h4 class="mt-4 mb-3">Posição Atual por Produto</h4>
+        <div class="table-responsive">
+            <table class="table table-striped align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>PRODUTO</th>
+                        <th>LOCALIZAÇÃO</th>
+                        <th>QTD. ATUAL</th>
+                        <th>MÍN / MÁX</th>
+                        <th>STATUS (ESTABEAIXO)</th>
+                        <th>AÇÕES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#1</td>
+                        <td>Teclado Mecânico RGB Switch Brown</td>
+                        <td>Corredor A - Prateleira 02</td>
+                        <td>18</td>
+                        <td>10 / 50</td>
+                        <td><span class="badge bg-success-subtle text-success border border-success">Normal</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                                data-bs-target="#estoqueDialog"><i class="bi bi-pencil"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#2</td>
+                        <td>Monitor 27" IPS 144Hz Full HD</td>
+                        <td>Corredor C - Pallet 01</td>
+                        <td>4</td>
+                        <td>5 / 20</td>
+                        <td><span class="badge bg-danger">Estoque Baixo</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                                data-bs-target="#estoqueDialog"><i class="bi bi-pencil"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="container bg-white p-4 rounded shadow-sm">
+        <h4 class="mb-3">Histórico de Movimentações</h4>
+        <div class="table-responsive">
+            <table class="table table-striped align-middle">
+                <thead class="table-secondary">
+                    <tr>
+                        <th>ID</th>
+                        <th>DATA/HORA</th>
+                        <th>PRODUTO</th>
+                        <th>TIPO</th>
+                        <th>QTD. MOVIMENTADA</th>
+                        <th>QTD. ANTERIOR</th>
+                        <th>QTD. ATUAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#3</td>
+                        <td>11/11/2026 14:30</td>
+                        <td>Monitor 27" IPS 144Hz Full HD</td>
+                        <td><span class="badge bg-success">Entrada (1)</span></td>
+                        <td><span class="text-success fw-bold">+4</span></td>
+                        <td>0</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>#2</td>
+                        <td>13/11/2026 15:20</td>
+                        <td>Teclado Mecânico RGB Switch Brown</td>
+                        <td><span class="badge bg-danger">Saída (2)</span></td>
+                        <td><span class="text-danger fw-bold">-2</span></td>
+                        <td>20</td>
+                        <td>18</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="modal fade" id="estoqueDialog" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Configurar Estoque</h5><button type="button" class="btn-close"
+                        data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Formulário de Configuração de Estoque...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="movimentacaoDialog" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Nova Movimentação</h5><button type="button" class="btn-close"
+                        data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Formulário de Movimentação...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
