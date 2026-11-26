@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Exemplo 64 - JavaScript Vetores</title>
+</head>
+
+<body>
+    <div class="container-sm">
+        <div class="alert alert-primary" role="alert">
+            <h1>Exemplo 64 - JavaScript - Vetores</h1>
+            <h2>Uso dos métodos {Push, Pop, Sort, LastIndexOf e IndexOf}</h2>
+            <h2 class="text-primary">
+                Uso dos métodos de Arrays em JavaScript
+            </h2>
+
+            <p class="text-muted">
+                Os métodos de arrays permitem adicionar, remover, organizar
+                e localizar elementos em uma lista.
+            </p>
+
+            <div class="row g-3">
+
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white">
+                            push()
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                Adiciona elementos ao final de um array.
+                                Utilizado para incluir novos itens em uma lista.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-danger text-white">
+                            pop()
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                Remove o último elemento do array.
+                                Utilizado para retirar o item mais recente de uma lista.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-success text-white">
+                            sort()
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                Ordena os elementos do array.
+                                Utilizado para organizar nomes, números e outros valores.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-warning text-dark">
+                            indexOf()
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                Retorna o índice da primeira ocorrência de um elemento.
+                                Utilizado para localizar valores em uma lista.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header bg-info text-dark">
+                            lastIndexOf()
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                Retorna o índice da última ocorrência de um elemento.
+                                Utilizado quando existem valores repetidos no array.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>Exemplo de uso dos métodos destacados acima</h2>
+                    <div class="alert alert-warning" role="alert">
+                        <script>
+                            var vetor1 = [];
+                            vetor1.push("José");
+                            vetor1.push("Maria");
+                            vetor1.push("João");
+                            vetor1.push("Pedro");
+                            vetor1.push("Lara");
+                            vetor1.push("Marcos");
+                            vetor1.push("Rafael");
+                            vetor1.push("Adriano");
+                            vetor1.push("Lara");
+                            vetor1.push("Taina");
+                            vetor1.push("Michelle");
+                            vetor1.push("Liris");
+                            vetor1.push("Roberto");
+                            vetor1.push("Carlos");
+                            document.write('vetor1 [' + vetor1 + ']');
+                            document.write("<br>");
+                            document.write("Usando o método pop para retirar o último elemento da lista");
+                            vetor1.pop();
+                            document.write("<br>");
+                            document.write('vetor1 [' + vetor1 + ']');
+                            vetor1.pop();
+                            vetor1.pop();
+                            document.write("<br>");
+                            document.write("Aplicamos agora o método pop duas vezes, dessa retiramos os dois últimos elementos da nossa lista;")
+                            document.write("<br>");
+                            document.write('vetor1 [' + vetor1 + ']');
+                            document.write("<br>");
+                            document.write("<br>");
+                            document.write("Usando o método indexOf para descobrir a partir do valor o seu índice.");
+                            var indice = vetor1.indexOf("Rafael");
+                            document.write("<br>");
+                            document.write("<br>");
+                            document.write("O índice do elemento Rafael é: " + indice);
+                            document.write("<br>");
+                            document.write("<br>");
+                            document.write("Usando o método indexOf para descobrir a última ocorrência de um elemento e retornar o seu índice. Exemplo vamos buscar o elemento Lara, que aparece duas vezes no nosso vetor, na posição 4 e 8. Logo, ao usar o método lastIndexOf ele deverá retornar a última ocorrência que é o índice 8");
+                            var ultimoIndice = vetor1.lastIndexOf("Lara");
+                            document.write("<br>");
+                            document.write("<br>");
+                            document.write("O índice do elemento Lara após a execução do método LastIndexOf é: " + ultimoIndice);
+                            document.write("<br>");
+                            document.write("<br>");
+                            document.write("Usando o método sort para ordenar de forma crescente o vetor1: <br>");
+                            document.write("vetor1 após a utilização do método sort(): [" + vetor1.sort() + "]");
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
